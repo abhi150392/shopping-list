@@ -1,5 +1,6 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Receipe } from '../receipe.model';
+import { ReceipeService } from '../receipe.service';
 
 @Component({
   selector: 'app-receipe-list',
@@ -7,28 +8,14 @@ import { Receipe } from '../receipe.model';
   styleUrls: ['./receipe-list.component.css'],
 })
 export class ReceipeListComponent implements OnInit {
-  @Output() receipeWasSelected = new EventEmitter<Receipe>();
-  receipes: Receipe[] = [
-    new Receipe(
-      'Cup Cake',
-      'Vegetable moussaka.',
-      'https://www.the-girl-who-ate-everything.com/wp-content/uploads/2016/10/edible-blood.jpg'
-    ),
-    new Receipe(
-      'Pan Cake',
-      'Home made Pan cake.',
-      'https://www.onceuponachef.com/images/2009/08/pancakes-01.jpg'
-    ),
-    new Receipe(
-      'Banana Cake',
-      'Banana Pan Cake.',
-      'https://www.healthygreenkitchen.com/wp-content/uploads/2023/03/Healthy-Banana-Pancakes-4.jpg'
-    ),
-  ];
+  // @Output() receipeWasSelected = new EventEmitter<Receipe>();
+  receipes: Receipe[] = [];
 
-  constructor() {}
-  ngOnInit(): void {}
-  onReceipeSelected(receipe: Receipe) {
-    this.receipeWasSelected.emit(receipe);
+  constructor(private receipeService: ReceipeService) {}
+  ngOnInit(): void {
+    this.receipes = this.receipeService.getReceipes();
   }
+  // onReceipeSelected(receipe: Receipe) {
+  //   this.receipeWasSelected.emit(receipe);
+  // }
 }
