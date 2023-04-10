@@ -3,12 +3,13 @@
     <app-receipe-list></app-receipe-list>
   </div>
   <div class="col-md-7">
-    <app-receipe-detail
+    <!-- <app-receipe-detail
       *ngIf="selectedReceipe; else infoText"
       [receipe]="selectedReceipe"
     ></app-receipe-detail>
     <ng-template #infoText>
       <p>Please Select the Receipe!!!</p>
-    </ng-template>
+    </ng-template> -->
+    <router-outlet></router-outlet>
   </div>
 </div>

@@ -10,11 +10,8 @@ import { ReceipeService } from '../../receipe.service';
 })
 export class ReceipeItemComponent implements OnInit {
   @Input() receipe: Receipe;
+  @Input() index: number;
   // @Output() recipeSelected = new EventEmitter<void>();
   constructor(private receipeService: ReceipeService) {}
   ngOnInit(): void {}
-
-  onSelected() {
-    this.receipeService.receipeSelected.emit(this.receipe);
-  }
 }

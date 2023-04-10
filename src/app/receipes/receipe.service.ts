@@ -32,6 +32,10 @@ export class ReceipeService {
     return this.receipes.slice();
   }
 
+  getReceipe(id: number) {
+    return this.receipes[id];
+  }
+
   addItemsToShoppingList(ingredient: Ingredient[]) {
     this.slService.addItemsFromReceipeService(ingredient);
   }
