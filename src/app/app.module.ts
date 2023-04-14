@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header.component';
@@ -15,6 +16,7 @@ import { DropdownDirective } from './Shared/dropdown.directive';
 import { ShoppingService } from './shopping-list/shopping.service';
 import { ReceipeStartComponent } from './receipes/receipe-start/receipe-start.component';
 import { ReceipeEditComponent } from './receipes/receipe-edit/receipe-edit.component';
+import { ReceipeService } from './receipes/receipe.service';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,14 @@ import { ReceipeEditComponent } from './receipes/receipe-edit/receipe-edit.compo
     ReceipeStartComponent,
     ReceipeEditComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [ShoppingService],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
+  providers: [ShoppingService, ReceipeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

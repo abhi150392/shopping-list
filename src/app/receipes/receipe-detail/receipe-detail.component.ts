@@ -33,4 +33,8 @@ export class ReceipeDetailComponent implements OnInit {
     console.log('clicked');
     // this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
   }
+  onDeleteReceipe() {
+    this.receipeService.deleteRecipe(this.id);
+    this.router.navigate(['/receipes']);
+  }
 }
