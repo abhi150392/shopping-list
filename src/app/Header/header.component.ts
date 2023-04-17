@@ -34,6 +34,10 @@ export class HeaderComponent implements OnInit {
     this.dataService.getReceipes();
   }
 
+  onLogout() {
+    this.authService.logout();
+  }
+
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }

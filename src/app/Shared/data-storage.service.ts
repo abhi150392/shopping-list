@@ -2,12 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ReceipeService } from '../receipes/receipe.service';
 import { Receipe } from '../receipes/receipe.model';
+import { AuthService } from '../auth/auth.service';
+import { User } from '../auth/user.model';
+import { take } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
   constructor(
     private http: HttpClient,
-    private receipeService: ReceipeService
+    private receipeService: ReceipeService,
+    private authService: AuthService
   ) {}
 
   storeReceipes() {
