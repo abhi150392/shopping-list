@@ -17,6 +17,8 @@ import { ShoppingService } from './shopping-list/shopping.service';
 import { ReceipeStartComponent } from './receipes/receipe-start/receipe-start.component';
 import { ReceipeEditComponent } from './receipes/receipe-edit/receipe-edit.component';
 import { ReceipeService } from './receipes/receipe.service';
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinner } from './Shared/Loading-spinner/loading-spinner';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { ReceipeService } from './receipes/receipe.service';
     DropdownDirective,
     ReceipeStartComponent,
     ReceipeEditComponent,
+    AuthComponent,
+    LoadingSpinner,
   ],
   imports: [
     BrowserModule,

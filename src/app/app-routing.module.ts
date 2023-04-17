@@ -6,6 +6,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ReceipeStartComponent } from './receipes/receipe-start/receipe-start.component';
 import { ReceipeDetailComponent } from './receipes/receipe-detail/receipe-detail.component';
 import { ReceipeEditComponent } from './receipes/receipe-edit/receipe-edit.component';
+import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [
   {
@@ -38,6 +39,10 @@ const appRoutes: Routes = [
   {
     path: 'shopping-list',
     component: ShoppingListComponent,
+  },
+  {
+    path: 'auth',
+    component: AuthComponent,
   },
 ];
 @NgModule({
