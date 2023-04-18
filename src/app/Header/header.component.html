@@ -9,13 +9,13 @@
         <li>
           <a href="#" (click)="onSelect('shopping-list')">Shopping List</a>
         </li> -->
-        <li routerLinkActive="active" *ngIf="isAuthenticated">
+        <li routerLinkActive="active">
           <a routerLink="/receipes">Receipe</a>
         </li>
-        <li routerLinkActive="active" *ngIf="!isAuthenticated">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/auth">Authenticate</a>
         </li>
-        <li routerLinkActive="active" *ngIf="isAuthenticated">
+        <li routerLinkActive="active">
           <a routerLink="/shopping-list">Shopping List</a>
         </li>
       </ul>
